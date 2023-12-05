@@ -1,8 +1,8 @@
 async function getResponce() {
-//    let responce = await fetch("shop.json")
+//    let response = await fetch("shop.json")
 
 //    let content = await responce.text()
-    let response = await fetch("shop.json");
+    let responce = await fetch("shop.json");
     let content = await responce.json();
 //    content = content.slice(0, 9)
     let key
