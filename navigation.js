@@ -50,6 +50,7 @@ function highlightCurrentLink() {
     const homeLink = document.getElementById("homeLink");
     const photosLink = document.getElementById("photosLink");
     const infoLink = document.getElementById("infoLink");
+    const shopLink = document.getElementById("shopLink");
     const foodLink = document.getElementById("foodLink");
     const lifeLink = document.getElementById("lifeLink");
     const fearLink = document.getElementById("fearLink");
@@ -58,6 +59,7 @@ function highlightCurrentLink() {
     // Убираем стиль у всех ссылок
     homeLink.classList.remove("current");
     photosLink.classList.remove("current");
+    shopLink.classList.remove("current");
     infoLink.classList.remove("current");
     foodLink.classList.remove("current");
     lifeLink.classList.remove("current");
@@ -69,6 +71,8 @@ function highlightCurrentLink() {
         homeLink.classList.add("nav-item active");
     } else if (currentPage.includes("photos.html")) {
         photosLink.classList.add("nav-item active");
+    } else if (currentPage.includes("shop.html")) {
+        shopLink.classList.add("nav-item active");
     } else if (currentPage.includes("info.html")) {
         infoLink.classList.add("current");
     } else if (currentPage.includes("food.html")) {
