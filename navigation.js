@@ -7,6 +7,7 @@ function createNavigationMenu() {
         { title: "Питание", url: "food.html", id:"foodLink"},
         { title: "Обитание", url: "life.html", id:"lifeLink"},
         { title: "Опасности", url: "fear.html", id:"fearLink"},
+        { title: "Магазин", url: "shop.html", id:"shopLink"},
         { title: "Оставить отзыв", url: "form.html", id:"formLink"},
 //        { title: "Решение алгоритмической задачи", url: "algo.html", id:"algoLink"},
 //        { title: "DOM_JS. Считываем информацию из DOM", url: "pasp.html", id:"paspLink"},
