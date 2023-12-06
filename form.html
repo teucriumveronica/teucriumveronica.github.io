@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Подключаем Bootstrap CSS из CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Подписаться на рассылку</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="centered-title">
+            <h1>Оставить отзыв и подписаться на рассылку</h1>
+        </div>
+    </header>
+    <nav id="dynamicNav">
+        <!-- Добавляем классы Bootstrap к элементам навигации -->
+        <ul class="nav nav-tabs">
+        </ul>
+    </nav>
+    <main>
+        <section id="contact-form">
+            <h2>Еженедельная рассылка о новостях в мире сурикатов</h2>
+            <form id="myForm" action="https://www.ya.ru/search">
+                <p>Фамилия:
+                    <input type="text" id="lastname" name="lastname" required>
+                </p>
+                <p>Имя:
+                    <input type="text" id="firstname" name="firstname" required>
+                </p>
+                <p>Мобильный телефон:</label>
+                    <input type="tel" id="mobile" name="mobile" required>
+                </p>
+                <p>Электронная почта:</label>
+                    <input type="email" id="email" name="email" required>
+                </p>
+                <input type="hidden" id="date" name="date" value="">
+                <p>
+                    <input type="submit" class="btn btn-primary" value="Отправить">
+                </p>
+            </form>
+        </section>
+        <section id="contact-form">
+            <h2>Рассказать интересный факт о сурикатах</h2>
+            <form id="Forma" action="https://www.ya.ru/search">
+                    <p><label for="name">Ваше имя:</label>
+                    <input type="text" id="name" name="name" value="Suricata suricatta" required><br></p>
+            
+                    <label for="age">Сколько лет вы увлекаетесь сурикатами?</label>
+                    <input type="number" id="age" name="age" inputmode="numeric" value="42"><br>
+            
+                    <p>Ваш пол:</p>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Мужской</label><br>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Женский</label><br>
+    
+                    <label for="comments">Ваши интересные факты:</label>
+                    <textarea id="comments" name="comments" rows="3" cols="50"></textarea>
+    
+                    <p><label for="birthdate">Дата рождения (мы пришлём вам открытку с сурикатом):</label>
+                    <input type="date" id="birthdate" name="birthdate"><br></p>
+        
+                    <p><label for="newsletter">Подписаться на рассылку:</label>
+                    <input type="checkbox" id="newsletter" name="newsletter" value="yes"><br></p>
+                    
+                    <p><label for="password">Кодовое слово любителей сурикатов:</label>
+                    <input type="password" id="password" name="password"><br></p>
+            
+                    <input type="hidden" name="hiddenField" value="Мы любим сурикатов!">
+            
+                <input type="submit" class="btn btn-primary" value="Отправить">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Сайт о сурикатах</p>
+    </footer>
+    <!-- Подключаем скрипты Bootstrap (jQuery и Popper.js) и сам Bootstrap JS из CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-GLhlTQ8iK1uL10z+KZ+YXRNUFd9dI1YUVL4By/AeL+9i4NxrWIV2+p1GMwn5bQt" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-pzjw8c+ua/C5qABIryHE8LW2OrEbqRbJ7QdyfktP0n8rsZjIjV+rTdxBbUn2tN6F" crossorigin="anonymous"></script>
+    <script src="navigation.js"></script>
+    <script>
+        document.getElementById("myForm").onsubmit = function(event) {
+            event.preventDefault(); // Предотвратить отправку формы по умолчанию
+            // Получить текущую дату
+            var currentDate = new Date();
+            var year = currentDate.getFullYear();
+            var month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
+            var day = currentDate.getDate().toString().padStart(2, "0");
+            var formattedDate = `${year}-${month}-${day}`;
+
+            // Установить текущую дату в поле "date"
+            document.getElementById("date").value = formattedDate;
+
+            var formData = new FormData(document.getElementById("myForm"));
+            var url = this.action + '?' + new URLSearchParams(formData);
+            window.open(url, "_blank");
+        };
+    </script>
+</body>
+</html>
