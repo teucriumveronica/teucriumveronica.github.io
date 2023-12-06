@@ -1,0 +1,82 @@
+.current {
+    background-color: #a9ccf1; 
+    color: rgb(27, 11, 28);
+}
+.fixed-anchors {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-top: 100px;
+    background-color: #fff; /* Цвет фона, чтобы выделить якори */
+    padding: 10px; /* Расстояние от края экрана */
+    z-index: 100; /* Уровень наложения для обеспечения видимости над другими элементами */
+}
+
+.fixed-anchors a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #333; /* Цвет текста для ссылок */
+}
+.biological-features-table {
+    background-image: url('sav.jpg'); /* Путь к фоновой фотографии */
+    background-size: cover; /* Заполнение всей таблицы */
+    background-repeat: no-repeat; /* Не повторять фон */
+    background-position: center; /* Выравнивание фоновой картинки по центру */
+    width: 100%; /* Ширина таблицы 100% от родительского элемента */
+}
+
+.biological-features-table td {
+    background-color: rgba(255, 255, 255, 0.7); /* Прозрачный фон для ячеек с текстом */
+    padding: 10px;
+}
+#date {
+    display: none;
+  }
+
+#homeIconLink {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px; 
+    z-index: 1000
+}
+
+ .centered-title {
+    text-align: center;
+}
+main {
+    margin-bottom: 140px; 
+}
+
+/* Общие стили для nav-item (используя Bootstrap) */
+.nav-item {
+    margin-right: 15px; /* Пример: добавляем немного отступа между элементами */
+}
+
+/* Стиль для активного элемента - розовый фон и белый текст */
+.nav-item.active {
+    background-color: pink;
+    color: white;
+    /* Дополнительные стили, если необходимо */
+}
+
+/* Если хотите изменить цвет текста для неактивных элементов */
+.nav-item:not(.active) {
+    color: black; /* Измените цвет текста на черный для неактивных элементов */
+}
+
+
+/* Стили для центрирования изображения */
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+img {
+    max-width: 100%; /* Чтобы изображение не выходило за пределы окна */
+    /* max-height: 100%; Чтобы изображение не выходило за пределы окна
+} */
